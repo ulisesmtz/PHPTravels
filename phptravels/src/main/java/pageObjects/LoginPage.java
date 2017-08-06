@@ -12,7 +12,7 @@ public class LoginPage extends PageObject {
 	@FindBy(name = "password")
 	private WebElement password;
 	
-	@FindBy(xpath = "//button[contains('Login')]")
+	@FindBy(xpath = "//button[contains(.,'Login')]")
 	private WebElement submit;
 	
 
@@ -20,9 +20,6 @@ public class LoginPage extends PageObject {
 		super(driver);
 	}
 	
-	public boolean isInitialized() {
-		return username.isDisplayed();
-	}
 	
 	public void enterUserName(String username) {
 		this.username.clear();

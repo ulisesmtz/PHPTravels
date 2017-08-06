@@ -1,4 +1,4 @@
-package phptravels;
+package testing;
 
 import java.util.concurrent.TimeUnit;
 
