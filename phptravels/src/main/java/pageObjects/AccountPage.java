@@ -8,4 +8,7 @@ public class AccountPage extends PageObject {
 		super(driver);
 	}
 
+	public String getTitle() {
+		return driver.getTitle();
+	}
 }

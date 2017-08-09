@@ -15,6 +15,9 @@ public class LoginPage extends PageObject {
 	@FindBy(xpath = "//button[contains(.,'Login')]")
 	private WebElement submit;
 	
+	@FindBy(xpath = "//div[@class='alert alert-danger']")
+	private WebElement error; // error when incorrect credentials are used
+	
 
 	public LoginPage(WebDriver driver) {	
 		super(driver);
@@ -34,6 +37,14 @@ public class LoginPage extends PageObject {
 	public AccountPage submit() {
 		submit.click();
 		return new AccountPage(driver);
+	}
+	
+	public boolean isErrorVisible() {
+		return error.isDisplayed();
+	}
+	
+	public String getErrorMessage() {
+		return error.getText();
 	}
 
 }
