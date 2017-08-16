@@ -25,7 +25,7 @@ public class FunctionalTest {
 	
 	@AfterClass
 	public void quitDriver() {
-		driver.quit();
+		//driver.quit();
 	}
 
 }
