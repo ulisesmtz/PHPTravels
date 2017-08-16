@@ -3,8 +3,13 @@ package pageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 
 public class HomePage extends PageObject{
+	
+	@FindBy(xpath = "(//button[contains(.,'Search')])[1]")
+	private WebElement submit;
 		
 	public HomePage(WebDriver driver) {
 		super(driver); 
@@ -34,5 +39,24 @@ public class HomePage extends PageObject{
 		
 		nextMonth.click();
 		date.click();
+	}
+	
+	/**
+	 * Selects the number of adults and children going on trip
+	 * @param adults the number of adults going on trip
+	 * @param children the number of children going on trip
+	 */
+	public void selectNumPeople(int adults, int children) {
+		Select selectAdults = new Select(driver.findElement(By.id("adults")));
+		selectAdults.selectByIndex(adults-1); // -1 because first value in list is 1
+		
+		Select selectChildren = new Select(driver.findElement(By.id("child")));
+		selectChildren.selectByIndex(children);
+	}
+	
+	public SearchPage submit() {
+		submit.click();
+		return new SearchPage(driver); 
+
 	}
 }
