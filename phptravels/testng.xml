@@ -1,15 +1,14 @@
-<suite name="Suite">
+<suite name="PHPTravels Test">
 
-    <test name="ToolsQA">
+    <test name="Login">
 
-	<!-- <parameter name="sUsername" value="testuser_1"/>
-
-	<parameter name="sPassword" value="Test@123"/> -->
-
+	<parameter name="username" value="user@phptravels.com"/>
+	<parameter name="password" value="demouser"/> 
+	<parameter name="fakeUsername" value="fake@phptravels.com"/>
+	<parameter name="fakePassword" value="fake"/>
+	
 		<classes>
-
 		    <class name="testing.LoginTest" />
-
 		</classes>
 
     </test>
