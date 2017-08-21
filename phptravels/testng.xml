@@ -12,5 +12,13 @@
 		</classes>
 
     </test>
+    
+    <test name="Booking">
+    
+    	<classes>
+    		<class name="testing.HomeTest"/>
+    	</classes>
+    
+    </test>
 
 </suite>
