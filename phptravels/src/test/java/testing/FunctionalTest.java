@@ -1,9 +1,14 @@
 package testing;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.*;
 
 /**
@@ -13,14 +18,18 @@ import org.testng.annotations.*;
  */
 public class FunctionalTest {
 	
-	protected WebDriver driver;
+	protected RemoteWebDriver driver;
 	
 	@BeforeClass
-	public void setupDriver() {
-		// TODO: add multiple browsers capabilities
-		System.setProperty("webdriver.gecko.driver", "C:\\Users\\UlisesM\\Downloads\\Drivers\\geckodriver.exe");
-		driver = new FirefoxDriver();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	public void setupDriver() throws MalformedURLException {
+		
+		DesiredCapabilities dc = null;
+		
+		dc = DesiredCapabilities.firefox();
+		dc.setBrowserName("firefox");
+		dc.setPlatform(Platform.WIN8_1);
+		
+		driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), dc);
 	}
 	
 	@AfterClass
