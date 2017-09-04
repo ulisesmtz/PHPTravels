@@ -1,7 +1,8 @@
 <suite name="PHPTravels Test">
 
-    <test name="Login">
+    <test name="Chrome">
 
+	<parameter name="browser" value="chrome"/>
 	<parameter name="username" value="user@phptravels.com"/>
 	<parameter name="password" value="demouser"/> 
 	<parameter name="fakeUsername" value="fake@phptravels.com"/>
@@ -9,16 +10,26 @@
 	
 		<classes>
 		    <class name="testing.LoginTest" />
+		 	<class name="testing.HomeTest"/>
+		    
 		</classes>
 
     </test>
     
-    <test name="Booking">
-    
-    	<classes>
-    		<class name="testing.HomeTest"/>
-    	</classes>
-    
-    </test>
+    <test name="Firefox">
 
+	<parameter name="browser" value="firefox"/>
+	<parameter name="username" value="user@phptravels.com"/>
+	<parameter name="password" value="demouser"/> 
+	<parameter name="fakeUsername" value="fake@phptravels.com"/>
+	<parameter name="fakePassword" value="fake"/>
+	
+		<classes>
+		    <class name="testing.LoginTest" />
+		 	<class name="testing.HomeTest"/>
+		    
+		</classes>
+
+    </test>
+    
 </suite>
