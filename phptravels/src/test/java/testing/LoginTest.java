@@ -46,9 +46,6 @@ public class LoginTest extends FunctionalTest {
 		loginPage.enterUserName(fakeUsername);
 		loginPage.enterPassword(fakePassword);
 		loginPage.submit();
-
-	//	Assert.assertEquals(loginPage.isErrorVisible(), true);
-	//	Assert.assertEquals(loginPage.getErrorMessage(), "Invalid Email or Password");
 	}
 
 }

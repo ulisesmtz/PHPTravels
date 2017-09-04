@@ -1,35 +1,30 @@
 <suite name="PHPTravels Test">
 
-    <test name="Chrome">
-
-	<parameter name="browser" value="chrome"/>
-	<parameter name="username" value="user@phptravels.com"/>
-	<parameter name="password" value="demouser"/> 
-	<parameter name="fakeUsername" value="fake@phptravels.com"/>
-	<parameter name="fakePassword" value="fake"/>
+	<parameter name="username" value="user@phptravels.com" />
+	<parameter name="password" value="demouser" />
+	<parameter name="fakeUsername" value="fake@phptravels.com" />
+	<parameter name="fakePassword" value="fake" />
 	
+	<test name="Chrome">
+
+		<parameter name="browser" value="chrome" />
+
 		<classes>
-		    <class name="testing.LoginTest" />
-		 	<class name="testing.HomeTest"/>
-		    
+			<class name="testing.LoginTest" />
+			<class name="testing.HomeTest" />
 		</classes>
 
-    </test>
-    
-    <test name="Firefox">
+	</test>
 
-	<parameter name="browser" value="firefox"/>
-	<parameter name="username" value="user@phptravels.com"/>
-	<parameter name="password" value="demouser"/> 
-	<parameter name="fakeUsername" value="fake@phptravels.com"/>
-	<parameter name="fakePassword" value="fake"/>
-	
+	<test name="Firefox">
+
+		<parameter name="browser" value="firefox" />
+
 		<classes>
-		    <class name="testing.LoginTest" />
-		 	<class name="testing.HomeTest"/>
-		    
+			<class name="testing.LoginTest" />
+			<class name="testing.HomeTest" />
 		</classes>
 
-    </test>
-    
+	</test>
+
 </suite>

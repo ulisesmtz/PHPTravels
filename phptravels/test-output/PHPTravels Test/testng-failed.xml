@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [PHPTravels Test]">
+  <parameter name="password" value="demouser"/>
+  <parameter name="fakePassword" value="fake"/>
+  <parameter name="browser" value="firefox"/>
+  <parameter name="fakeUsername" value="fake@phptravels.com"/>
+  <parameter name="username" value="user@phptravels.com"/>
+  <test name="Chrome(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="testing.HomeTest">
+        <methods>
+          <include name="setupDriver"/>
+          <include name="setupDriver"/>
+          <include name="quitDriver"/>
+          <include name="quitDriver"/>
+        </methods>
+      </class> <!-- testing.HomeTest -->
+      <class name="testing.LoginTest">
+        <methods>
+          <include name="failLogin"/>
+          <include name="setupDriver"/>
+          <include name="setupDriver"/>
+          <include name="login" invocation-numbers="0"/>
+          <include name="quitDriver"/>
+          <include name="quitDriver"/>
+        </methods>
+      </class> <!-- testing.LoginTest -->
+    </classes>
+  </test> <!-- Chrome(failed) -->
+</suite> <!-- Failed suite [PHPTravels Test] -->
